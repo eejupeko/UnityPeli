@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
 	void Update () {
         float moveHorizontal = Input.GetAxis("Horizontal");
         jumping = Input.GetKeyDown(KeyCode.Space);
-        onGround = rb2D.velocity.y == 0;
+        onGround = Mathf.Abs(rb2D.velocity.y) <= 0.01;
 
         if (!onGround)
         {

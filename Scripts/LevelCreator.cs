@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelCreator : MonoBehaviour {
 
     public GameObject block;
+    public GameObject enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +14,16 @@ public class LevelCreator : MonoBehaviour {
 
     private void CreateBlock(float x, float y)
     {
-        GameObject toInstantiate = block;
-        GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+        GameObject instance = Instantiate(block, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
     }
 
-    public void CreateMap()
+    private void CreateEnemy(float x, float y, GameObject enemyType)
+    {
+        GameObject instance = Instantiate(enemyType, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+    }
+
+
+    public void CreateMap(GameObject player)
     {
         for (int x = 0; x < 20; x++)
         {
@@ -33,13 +39,15 @@ public class LevelCreator : MonoBehaviour {
         {
             CreateBlock(x, 0);
         }
-        CreateBlock(10, 1);
+        //CreateBlock(10, 1);
         CreateBlock(10, 2);
         CreateBlock(10, 3);
         CreateBlock(11, 2);
         CreateBlock(43, 0);
         CreateBlock(44, 0);
         CreateBlock(45, 0);
+        CreateEnemy(18, 1, enemy);
+        player.transform.position = new Vector3(0f, 2f, 0f);
     }
 
 	
