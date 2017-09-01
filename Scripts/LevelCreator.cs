@@ -48,6 +48,8 @@ public class LevelCreator : MonoBehaviour {
         CreateBlock(45, 0);
         CreateEnemy(18, 1, enemy);
         player.transform.position = new Vector3(0f, 2f, 0f);
+        CreateBlock(-1, 1);
+        CreateBlock(19, 1);
     }
 
 	

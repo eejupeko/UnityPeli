@@ -52,3 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 1848038362785936, guid: efd82ce119638bb45ace5e53009c536f, type: 2}
+  enemy: {fileID: 1656152752030308, guid: 4450e4473693df9468b80dbec40e577b, type: 2}
